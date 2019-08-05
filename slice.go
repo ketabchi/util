@@ -20,7 +20,7 @@ func CheckSliceEq(ss1, ss2 []string) bool {
 	return true
 }
 
-func ExistsStringInSlice(s string, ss []string) bool {
+func SliceContains(ss []string, s string) bool {
 	for _, s1 := range ss {
 		if s1 == s {
 			return true
