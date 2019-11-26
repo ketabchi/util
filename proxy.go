@@ -40,5 +40,5 @@ func GetProxy() (*url.URL, error) {
 }
 
 func (p *Proxy) String() string {
-	return fmt.Sprintf("%s://%s:%d:", p.Protocol, p.Ip, p.Port)
+	return fmt.Sprintf("%s://%s:%d", p.Protocol, p.Ip, p.Port)
 }
