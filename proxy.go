@@ -36,7 +36,6 @@ func GetProxy() (*url.URL, error) {
 		return nil, fmt.Errorf("%s", proxy.Error)
 	}
 
-	fmt.Println(proxy.String())
 	return url.Parse(proxy.String())
 }
 
