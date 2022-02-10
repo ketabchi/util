@@ -15,13 +15,13 @@ func filter(r rune) rune {
 
 func Clean(s string) string {
 	s = strings.Map(filter, s)
-	s = strings.Replace(s, "\u200C ", " ", -1)
-	s = strings.Replace(s, " : ", ": ", -1)
-	s = strings.Replace(s, " ...", "...", -1)
+	s = strings.ReplaceAll(s, "\u200C ", " ")
+	s = strings.ReplaceAll(s, " : ", ": ")
+	s = strings.ReplaceAll(s, " ...", "...")
 	// TODO: remove if it was 5 spaces
-	s = strings.Replace(s, "  ", " ", -1)
+	s = strings.ReplaceAll(s, "  ", " ")
 	// TODO: remove if it was 5 zero width spaces
-	s = strings.Replace(s, "\u200c\u200c", "\u200c", -1)
+	s = strings.ReplaceAll(s, "\u200c\u200c", "\u200c")
 	s = strings.TrimSuffix(s, string('\u200C'))
 	s = strings.TrimSuffix(s, string('\u202D'))
 
