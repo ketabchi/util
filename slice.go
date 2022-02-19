@@ -1,5 +1,10 @@
 package util
 
+import (
+	"math/rand"
+	"time"
+)
+
 func CheckSliceEq(ss1, ss2 []string) bool {
 	if len(ss1) != len(ss2) {
 		return false
@@ -27,4 +32,11 @@ func SliceContains(ss []string, s string) bool {
 		}
 	}
 	return false
+}
+
+func Shuffle(ss []string) {
+	rand.Seed(time.Now().UnixNano())
+	rand.Shuffle(len(ss), func(i, j int) {
+		ss[i], ss[j] = ss[j], ss[i]
+	})
 }
